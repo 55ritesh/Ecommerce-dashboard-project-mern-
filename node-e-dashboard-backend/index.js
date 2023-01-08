@@ -6,6 +6,7 @@ const Product = require("./db/Product")
 const Jwt = require('jsonwebtoken');
 const jwtKey = 'e-com';
 const app = express();
+const Base_url = process.env.Base_url||50000;
 
 app.use(express.json());
 app.use(cors());
@@ -103,4 +104,4 @@ app.get("/search/:key", async (req, resp) => {
     resp.send(result);
 })
 
-app.listen(5000);
+app.listen(Base_url);
