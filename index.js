@@ -12,6 +12,12 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname,'./front-end/build')))
+
+app.get('*',function(req,res){
+    res.sendFile(path.join(__dirname,'./front-end/build/index.html'));
+});
+
 app.post("/register", async (req, resp) => {
     let user = new User(req.body)
     let result = await user.save()
