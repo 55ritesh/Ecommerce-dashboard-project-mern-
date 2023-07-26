@@ -12,7 +12,7 @@ const ProductList = () => {
     },[])
 
   const getProducts= async ()=>{
-       let result = await fetch("http://localhost:5000/products");
+       let result = await fetch("https://ecommerce-dashboard-6lii.onrender.com/products");
        result = await result.json();
        setProducts(result);
    }
@@ -20,7 +20,7 @@ const ProductList = () => {
 //============ integration of delete api to delete products from list ==========================//  
 
    const deleteProduct=async(id)=>{
-    let result = await fetch(`http://localhost:5000/product/${id}`,{
+    let result = await fetch(`https://ecommerce-dashboard-6lii.onrender.com/product/${id}`,{
       method: "Delete"
     });
     result = await result.json();
@@ -37,7 +37,7 @@ const ProductList = () => {
     let key = event.target.value;
     if(key)
     {
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`https://ecommerce-dashboard-6lii.onrender.com/search/${key}`);
       result = await  result.json();
       if(result)
       {
