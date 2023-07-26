@@ -16,7 +16,7 @@ const UpdateProduct = () => {
 
     const getProductDetails = async () => {
         console.warn(params)
-        let result = await fetch('http://localhost:5000/product/${params.id}', {
+        let result = await fetch(`http://localhost:5000/product/${params.id}`, {
             headers: {
                 authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
